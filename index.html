@@ -1,44 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="NuDoc : A standalone API to read .NET XML documentation files and optionally augment it with reflection information." />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>NuDoc by clariuslabs</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>NuDoc</title>
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/clariuslabs/NuDoc">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/clariuslabs/NuDoc/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/clariuslabs/NuDoc/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/clariuslabs/NuDoc">View on GitHub</a>
+    <div class="wrapper">
 
-          <h1 id="project_title">NuDoc</h1>
-          <h2 id="project_tagline">A standalone API to read .NET XML documentation files and optionally augment it with reflection information.</h2>
+      <section>
+        <div id="title">
+          <h1>NuDoc</h1>
+          <p>A standalone API to read .NET XML documentation files and optionally augment it with reflection information.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/clariuslabs">clariuslabs</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/clariuslabs/NuDoc/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/clariuslabs/NuDoc/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
         <h1>
-<a name="nudoc-a-net-xml-api-documentation-reader" class="anchor" href="#nudoc-a-net-xml-api-documentation-reader"><span class="octicon octicon-link"></span></a>NuDoc: A .NET XML API Documentation Reader</h1>
+<a name="-nudoc-a-net-xml-api-documentation-reader" class="anchor" href="#-nudoc-a-net-xml-api-documentation-reader"><span class="octicon octicon-link"></span></a><img src="https://raw.github.com/clariuslabs/NuDoc/master/doc/Icon-32.png" alt="Icon"> NuDoc: A .NET XML API Documentation Reader</h1>
 
 <p>A standalone API to read .NET XML documentation files and optionally augment it with reflection information.</p>
 
 <p>NuDoc provides a simple and intuitive API that reads .NET XML documentation files into an in-memory model that can be easily used to generate alternative representations or arbitrary processing. If the read operation is performed using a .NET assembly rather than an XML file, NuDoc will automatically add the reflection information to the in-memory model for the documentation elements, making it very easy to post-process them by grouping by type, namespace, etc.</p>
 
 <p>NuDoc leverages two well-known patterns: the <a href="http://en.wikipedia.org/wiki/Visitor_pattern">Visitor</a> pattern and the <a href="http://en.wikipedia.org/wiki/Composite_pattern">Composite</a> pattern. Essentially, every member in the documentation file is represented as a separate "visitable" type. By simply writing a NuDoc <strong>Visitor</strong>-derived class, you can process only the elements you're interested in.</p>
+
+<p>NuDoc can read documentation files from any CIL assembly, and the source tree has explicit unit tests that do so for all major .NET platforms: .NET, WinRT/Metro, Windows Phone and Silverlight.</p>
+
+<h1>
+<a name="how-to-install" class="anchor" href="#how-to-install"><span class="octicon octicon-link"></span></a>How to Install</h1>
+
+<p>NuDoc is a single assembly with no external dependencies whatsoever and is distributed as a <a href="http://nuget.org">NuGet</a> package. It can be installed issuing the following command in the <a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">Package Manager Console</a>:</p>
+
+<pre><code>PM&gt; Install-Package NuDoc
+</code></pre>
+
+<h1>
+<a name="sample-code" class="anchor" href="#sample-code"><span class="octicon octicon-link"></span></a>Sample code</h1>
 
 <p>This is a sample visitor that generates markdown content from member summaries:</p>
 
@@ -143,16 +163,9 @@
 
 <p><img src="https://raw.github.com/clariuslabs/NuDoc/master/doc/NuDoc.Content.png" alt="Members hierarchy"></p>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">NuDoc maintained by <a href="https://github.com/clariuslabs">clariuslabs</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -163,7 +176,6 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
