@@ -52,7 +52,7 @@
 <h1>
 <a name="how-to-install" class="anchor" href="#how-to-install"><span class="octicon octicon-link"></span></a>How to Install</h1>
 
-<p>NuDoc is a single assembly with no external dependencies whatsoever and is distributed as a <a href="http://nuget.org">NuGet</a> package. It can be installed issuing the following command in the <a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">Package Manager Console</a>:</p>
+<p>NuDoc is a single assembly with no external dependencies whatsoever and is distributed as a <a href="https://nuget.org/packages/nudoc">NuGet</a> package. It can be installed issuing the following command in the <a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">Package Manager Console</a>:</p>
 
 <pre><code>PM&gt; Install-Package NuDoc
 </code></pre>
@@ -159,9 +159,13 @@
 
 <p><img src="https://raw.github.com/clariuslabs/NuDoc/master/doc/NuDoc.Members.png" alt="Members hierarchy"></p>
 
-<p>And this is the support documentation elements hierarchy:</p>
+<p>And this is the supported documentation elements hierarchy:</p>
 
 <p><img src="https://raw.github.com/clariuslabs/NuDoc/master/doc/NuDoc.Content.png" alt="Members hierarchy"></p>
+
+<p>Note that at the visitor level, both hierarchies are treated uniformly, since they all ultimately inherit from <strong>Element</strong>. In this fashion, you can have one or multiple visitors processing different parts of the graph, such as one that processes members and generates individual folders for each, and one for documentation elements that generate the content.</p>
+
+<p>Enjoy! Go get it now from <a href="https://nuget.org/packages/nudoc">NuGet</a> ;)</p>
       </section>
 
     </div>
